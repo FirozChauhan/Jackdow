@@ -1,16 +1,31 @@
 # Jackdaw 🐦
 
-A simple automatic wallpaper changer for Hyprland using `swww`.
+A lightweight automatic wallpaper changer for Hyprland using `swww`.
 
 ## How it works
 
-Jackdaw cycles through wallpapers in a specified folder, changing them at a set interval. It remembers the last wallpaper index using a data file, so it picks up where it left off after restart.
+Jackdaw cycles through wallpapers in a specified folder sorted by last modified date, changing them every 2 minutes. The current wallpaper index is saved to a text file for persistence across restarts.
 
 ## Requirements
 
 - `swww` — wallpaper daemon
-- `python` — 3.x
-- Hyprland (or any wayland compositor with swww support)
+- `python 3.x`
+- Hyprland or any Wayland compositor with swww support
+
+## Setup
+
+1. Edit `app.py` and replace `...yourPath` with your actual paths:
+
+```python
+folder = f'...yourPath/{sys.argv[1]}'
+dataFolder = f'...yourPath/{sys.argv[2]}.txt'
+```
+
+2. Create the data file before first run:
+
+```bash
+echo "1" > yourPath/datafilename.txt
+```
 
 ## Usage
 
@@ -18,8 +33,8 @@ Jackdaw cycles through wallpapers in a specified folder, changing them at a set 
 python app.py <folder_name> <data_file_name>
 ```
 
-- `<folder_name>` — name of the wallpaper subfolder inside `~/Pictures/wallpapers/`
-- `<data_file_name>` — name of the data file to store wallpaper index (no extension)
+- `<folder_name>` — wallpaper subfolder name inside your wallpapers directory
+- `<data_file_name>` — name of the persistence file (no extension needed)
 
 ### Example
 
@@ -27,40 +42,36 @@ python app.py <folder_name> <data_file_name>
 python app.py hazel hazel
 ```
 
-This will:
-- Look for wallpapers in `/home/asrar/Pictures/wallpapers/hazel/`
-- Store the current index in `/home/asrar/code/Jackdaw/scripts/hazel.txt`
-
 ## Autostart with Hyprland
 
 Add to `hyprland.conf`:
 
 ```
-exec-once = python /home/asrar/code/Jackdaw/scripts/app.py hazel hazel
+exec-once = python /yourPath/app.py hazel hazel
 ```
 
 Or bind to a key:
 
 ```
-bind = CTRL ALT, W, exec, python /home/asrar/code/Jackdaw/scripts/app.py hazel hazel
+bind = CTRL ALT, W, exec, bash -c "pkill python; python /yourPath/app.py hazel hazel"
 ```
 
 ## Wallpaper folder structure
 
 ```
-~/Pictures/wallpapers/
+yourPath/
 └── hazel/
     ├── wall1.jpg
     ├── wall2.png
     └── wall3.jpeg
 ```
 
+Wallpapers are sorted by **last modified date** (newest first).
+
 ## Configuration
 
-Edit these values inside `app.py`:
-
-| Variable | Description |
-|---|---|
-| `folder` | Path to wallpaper directory |
-| `dataFolder` | Path to index data file |
-| `time.sleep(120)` | Change interval in seconds (default: 2 min) |
+| Option | Location | Default |
+|---|---|---|
+| Change interval | `time.sleep(120)` | 2 minutes |
+| Transition | `--transition-type none` | No transition |
+| Sort order | `reverse=True` | Newest first |
