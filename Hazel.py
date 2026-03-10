@@ -1,10 +1,10 @@
 import os,time,sys
 
 #Main wallpaper path containing other wallapper folders
-folder = f'/home/asrar/Pictures/wallpapers/{sys.argv[1]}'
+folder = f'...yourPath/{sys.argv[1]}'
 
 #Script folder path to store the wallpaper value for persistence
-dataFolder = f'/home/asrar/code/Jackdaw/scripts/{sys.argv[2]}.txt'
+dataFolder = f'...yourPath/{sys.argv[2]}.txt'
 
 #Sorting the folder
 walls = sorted(os.listdir(folder), key=lambda f: os.path.getmtime(os.path.join(folder, f)), reverse=True)
