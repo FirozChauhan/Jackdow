@@ -1,6 +1,6 @@
-# Jackdaw 🐦
+# Jackdaw ⚔️🏴‍☠️⚔️
 
-A lightweight automatic wallpaper changer for Hyprland using `swww`.
+A lightweight automatic wallpaper wrapper for Hyprland using `swww`.
 
 ## How it works
 
