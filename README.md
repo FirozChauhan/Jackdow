@@ -13,14 +13,14 @@ A lightweight wallpaper-cycling daemon. Each profile owns a folder of wallpapers
 
    ```
    ~/Pictures/wallpapers/
-   ├── asrar/
-   └── bianca/
+   ├── work/
+   └── personal/
    ```
 
 2. Start a daemon per profile:
 
    ```bash
-   ./Jackdaw.py asrar
+   ./Jackdaw.py work
    ```
 
 ## How it works
