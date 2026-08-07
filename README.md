@@ -40,6 +40,19 @@ Edit the constants at the top of `Jackdaw.py`:
 | `SETTER`          | Wallpaper tool to apply images           |
 | `DEFAULT_DELAY`   | Seconds between wallpaper changes        |
 
+## Hyprland
+
+Bind each profile to a key: it kills any running daemon and starts the chosen profile, so switching profiles instantly switches wallpaper sets.
+
+```
+# Wallpaper controls
+bind = CTRL_ALT, 1, exec, pkill python; python ~/Jackdaw/Jackdaw.py work
+bind = CTRL_ALT, 2, exec, pkill python; python ~/Jackdaw/Jackdaw.py personal
+bind = CTRL_ALT, 3, exec, pkill python; python ~/Jackdaw/Jackdaw.py gaming
+```
+
+Adjust the paths and profile names to your setup.
+
 ## License
 
 MIT
