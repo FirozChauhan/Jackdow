@@ -1,0 +1,13 @@
+# Freebuff workspace (local tooling)
+.freebuff/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Runtime state (machine-specific wallpaper history)
+wallpaper.json
+*.tmp
+
+# OS / editor
+.DS_Store
