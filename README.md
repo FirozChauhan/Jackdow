@@ -2,10 +2,10 @@
 
 > Zero-dependency wallpaper daemon — one folder per profile, survives restarts, suspend, and broken images.
 
-![Python 3](https://img.shields.io/badge/Python_3-3776AB?logo=python&logoColor=white)
-![Dependencies](https://img.shields.io/badge/Dependencies-0-blue?logo=python&logoColor=white)
-![setter](https://img.shields.io/badge/setter-awww%20%2F%20swww-informational)
-![Config](https://img.shields.io/badge/config-.env-yellow?logo=dotenv&logoColor=white)
+![Python](https://img.shields.io/badge/Python-161B22?style=for-the-badge&logo=python&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-161B22?style=for-the-badge&logo=linux&logoColor=white)
+![dotenv](https://img.shields.io/badge/dotenv-161B22?style=for-the-badge&logo=dotenv&logoColor=white)
+![awww](https://img.shields.io/badge/awww-161B22?style=for-the-badge&logoColor=white)
 
 ## Install
 
