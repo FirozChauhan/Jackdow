@@ -1,5 +1,3 @@
-# Freebuff workspace (local tooling)
-.freebuff/
 
 # Python
 __pycache__/
@@ -7,7 +5,11 @@ __pycache__/
 
 # Runtime state (machine-specific wallpaper history)
 wallpaper.json
+wallpaper.json.lock
 *.tmp
+
+# Local config (keep .env.example tracked)
+.env
 
 # OS / editor
 .DS_Store
